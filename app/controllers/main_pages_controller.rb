@@ -2,6 +2,6 @@ class MainPagesController < ApplicationController
   def home
   end
 
-  def listResults
+  def list_results
   end
 end

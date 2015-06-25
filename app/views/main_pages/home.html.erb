@@ -1,7 +1,5 @@
 
-  <!-- Services Section -->
-  <br/><br/><br/><br/><br/>
-    
+  <!-- Services Section -->  
     <section id="country_and_duration">
       <div class="container">
         <div class="col-lg-12 text-center">
@@ -10,15 +8,18 @@
         </div>
         <div class="row">
           <div class="col-md-6 col-md-offset-3">
-      <%= form_for(:session) do |f| %>
+      <%=form_tag({controller: "main_pages", action: "list_results"}, method: "post") do%>
       
-      <%= f.label :country %>
-      <%= f.text_field :country, class: 'form-control', placeholder: "Insert automated, dropdownlist of cities" %>
+      <%= label_tag :country %>
+      <%= text_field_tag :country, nil, class: "form-control", placeholder: "Insert automated, dropdownlist of cities" %>
 
-      <%= f.label :duration %>
-      <%= f.text_field :duration, class: 'form-control', placeholder: 'Insert a Calendar tag here' %>
+      <%= label_tag :duration %>
+      <%= text_field_tag :duration, nil, class: 'form-control', placeholder: 'Insert a Calendar tag here' %>
       <br/>
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+      <%= select_date Date.today, prefix: :start_date %>
+      <br/>
+      <br/>
+      <%= submit_tag "Submit", class: "btn btn-primary" %>
       
       <% end %>
           </div>
