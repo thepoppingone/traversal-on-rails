@@ -10,7 +10,6 @@ gem 'rails', '4.2.1'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.3.4'
 
-gem 'yahoo-weather'
 gem 'forecast_io'
 gem 'open-weather'
 
