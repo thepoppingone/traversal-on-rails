@@ -14,9 +14,10 @@
       <%= text_field_tag :country, nil, class: "form-control", placeholder: "Insert automated, dropdownlist of cities" %>
 
       <%= label_tag :duration %>
-      <%= text_field_tag :duration, nil, class: 'form-control', placeholder: 'Insert a Calendar tag here' %>
       <br/>
       <%= select_date Date.today, prefix: :start_date %>
+      <br/>
+      <%= select_date Date.today, prefix: :end_date %>
       <br/>
       <br/>
       <%= submit_tag "Submit", class: "btn btn-primary" %>

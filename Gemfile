@@ -11,6 +11,8 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.3.4'
 
 gem 'yahoo-weather'
+gem 'forecast_io'
+gem 'open-weather'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
@@ -38,6 +40,7 @@ gem 'rails_12factor'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+####### RESQUE
 
 group :production do
   gem 'thin'
