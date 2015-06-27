@@ -24,8 +24,14 @@ class MainPagesController < ApplicationController
   def find_by_country(country)
    HTTParty.get('http://api.openweathermap.org/data/2.5/weather', :query => {:q => country, :units => 'metric'})
   end
-  puts find_by_country(@countr).body
-  @displayString = find_by_country(@country).body
+  puts find_by_country(@country).body
+  #@displayString = find_by_country(@country).body
+  weatherinfo = JSON.parse(find_by_country(@country).body)
+  @displayString = weatherinfo["main"]["temp"]
+    @displayString2 = weatherinfo["main"]["temp_min"]
+      @displayString3 = weatherinfo["main"]["temp_max"]
+
+
 
   end
 end
