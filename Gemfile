@@ -12,7 +12,7 @@ gem 'bootstrap-sass', '>= 3.3.4'
 
 gem 'forecast_io'
 gem 'open-weather'
-
+gem 'httparty'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
