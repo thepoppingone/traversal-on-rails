@@ -17,8 +17,7 @@ class MainPagesController < ApplicationController
       end
       
       def find_by_city_forecast(city, days)
-        
-          HTTParty.get('http://api.openweathermap.org/data/2.5/weather', :query => {:q => city, :units => 'metric', :cnt => days})
+          HTTParty.get('http://api.openweathermap.org/data/2.5/forecast', :query => {:q => city, :units => 'metric', :cnt => days})
       end
 #  puts find_by_city(@city).body #(shows up in the Rails server)
   weather_info = JSON.parse(find_by_city(@city).body)
@@ -29,9 +28,14 @@ class MainPagesController < ApplicationController
       weather_forecast = JSON.parse(find_by_city_forecast(@city, 14).body)
       #puts find_by_city_forecast(@city,14).body
       #@displayForecast =  weather_forcast
-      @displayForecast = weather_forecast["main"]["temp"].to_s + "°C"
-       @displayForecast2 = weather_forecast["main"]["temp_min"].to_s + "°C"
-        @displayForecast3 = weather_forecast["main"]["temp_max"].to_s + "°C"
+      @displayForecastHash = weather_forecast["list"] #+ "°C"
+      @displayForecastArray = []
+      @displayForecastHash.each do |w|
+        puts w["main"]
+        @displayForecastArray.push w["main"]["temp"]
+      end
+      # @displayForecast2 = weather_forecast["main"]["temp_min"].to_s + "°C"
+      #  @displayForecast3 = weather_forecast["main"]["temp_max"].to_s + "°C"
 
   end
 end

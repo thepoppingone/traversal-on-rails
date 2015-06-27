@@ -6,7 +6,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="text-center">
-      <h3>The Weather Today For:</h3>
+      <h3>The Weather Today <%=Date.today%> For:</h3>
       <%= @city %>
       <br/>
       <h3>Average temperature</h3>
@@ -22,19 +22,22 @@
   
   <br/>
   
-  <div class="row">
+  <div class="row jumbotron">
     <div class="text-center">
-      <h3>The Weather Forecast For The Next Two Weeks:</h3>
+      <h3>The Weather Forecast For Next Two Weeks (Average Temperature Only):</h3>
       <%= @city %>
       <br/>
-      <h3>Average temperature</h3>
-      <%= @displayForecast%>
-      <br/>
-      <h3>Minimal temperature</h3>
-      <%= @displayForecast2%>
-      <br/>
-      <h3>Maximum temperature</h3>
-      <%= @displayForecast3%>
+      
+      <div class="row">
+      <% @displayForecastArray.each_with_index do |w, index|%>
+      <div class="col-md-3">
+        <h3>Day: <%=Date.today+(index+1).days%></h3>
+         <%= w.to_s+'°C' %>
+      </div>
+     <% break if index == 13%>
+      <% end %>
+    </div>
+      
     </div>
   </div>
 </div>
