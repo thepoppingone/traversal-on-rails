@@ -1,23 +1,22 @@
 <div class="col-lg-12 text-center">
-    <h2 class="section-heading">Weather Forecast Generated</h2>
-    <h3 class="section-subheading text-muted">Check the information below!</h3>
+  <h2 class="section-heading">Weather Forecast Generated</h2>
+  <h3 class="section-subheading text-muted">Check the information below!</h3>
 </div>
 
 <div class="container-fluid">
   <div class="row">
     <div class="text-center">
-    <h3>The Weather Today For:</h3>
-  <%= @country %>
-  <br>
-  <br>
-  <h3>Average temperature</h3>
-    <%= @displayString %>
-    <br>
-    <h3>Minimal temperature</h3>
-      <%= @displayString2.to_s%>
-      <br>
+      <h3>The Weather Today For:</h3>
+      <%= @city %>
+      <br/>
+      <h3>Average temperature</h3>
+      <%= @displayString %>
+      <br/>
+      <h3>Minimal temperature</h3>
+      <%= @displayString2%>
+      <br/>
       <h3>Maximum temperature</h3>
-        <%= @displayString3.to_s%>
+      <%= @displayString3%>
     </div>
   </div>
   
@@ -25,18 +24,17 @@
   
   <div class="row">
     <div class="text-center">
-    <h3>The Weather Forecast For The Next Two Weeks:</h3>
-  <%= @country %>
-  <br>
-  <br>
-  <h3>Average temperature</h3>
-    <%= @displayForecast.to_s%>
-    <br>
-    <h3>Minimal temperature</h3>
-      <%= @displayForecast2.to_s%>
-      <br>
+      <h3>The Weather Forecast For The Next Two Weeks:</h3>
+      <%= @city %>
+      <br/>
+      <h3>Average temperature</h3>
+      <%= @displayForecast%>
+      <br/>
+      <h3>Minimal temperature</h3>
+      <%= @displayForecast2%>
+      <br/>
       <h3>Maximum temperature</h3>
-        <%= @displayForecast3.to_s%>
+      <%= @displayForecast3%>
     </div>
   </div>
 </div>
