@@ -18,7 +18,10 @@ class MainPagesController < ApplicationController
   #@displayString = JSON.parse(response.body)
 
   #displayString = OpenWeather::Current.city(@country)
-  @displayString = JSON.parse(response.body)
+  
+  #testing
+  #@displayString = JSON.parse(response.body)
+  
   #@testWeather = response.page_url
   #write application logic here
 
