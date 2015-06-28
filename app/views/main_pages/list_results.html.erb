@@ -7,7 +7,6 @@
   <br/>
 </div>
 
-
   <div class="row">
     <div class="center-align">
       <h4>The Weather Today <%=Date.today%> For:</h4>
@@ -30,13 +29,13 @@
 </div>
   <div class="row">
     <div class="col s12 l12 grey lighten-3 text-center">
-      <h4>The Weather Forecast For Next Two Weeks (Average Temperature Only):</h4>
-      <%= @city %>
+      <h4>The Weather Forecast For Next Two Weeks (Average Temperature Only): </h4>
+      <%= @city + " " + @lat_long.to_s %>
       <br/>
 
       <div class="row">
       <% @displayForecastArray.each_with_index do |w, index|%>
-      <div class="col s3">
+      <div class="col s12 m6 l3">
         <h5>Day: <%=Date.today+(index+1).days%></h5>
          <%= w.to_s+'°C' %>
       </div>

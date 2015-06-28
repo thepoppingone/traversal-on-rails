@@ -14,6 +14,7 @@ gem 'materialize-sass'
 gem 'forecast_io'
 gem 'open-weather'
 gem 'httparty'
+gem 'geocoder'
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

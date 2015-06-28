@@ -23,10 +23,15 @@ class MainPagesController < ApplicationController
       def find_by_city_forecast(city, days)
           HTTParty.get('http://api.openweathermap.org/data/2.5/forecast', :query => {:q => city, :units => 'metric', :cnt => days})
       end
-#  puts find_by_city(@city).body #(shows up in the Rails server)
-  weather_info = JSON.parse(find_by_city(@city).body)
-  @displayString = weather_info["main"]["temp"].to_s + "°C"
-    @displayString2 = weather_info["main"]["temp_min"].to_s + "°C"
+      
+      def get_lat_long_by_city_name(city)
+        Geocoder.coordinates(city)
+      end
+      
+      #  puts find_by_city(@city).body #(shows up in the Rails server)
+      weather_info = JSON.parse(find_by_city(@city).body)
+      @displayString = weather_info["main"]["temp"].to_s + "°C"
+      @displayString2 = weather_info["main"]["temp_min"].to_s + "°C"
       @displayString3 = weather_info["main"]["temp_max"].to_s + "°C"
 
       weather_forecast = JSON.parse(find_by_city_forecast(@city, 14).body)
@@ -38,7 +43,11 @@ class MainPagesController < ApplicationController
         puts w["main"]
         @displayForecastArray.push w["main"]["temp"]
       end
-
+      
+    
+      
+      @lat_long = get_lat_long_by_city_name(@city)
+      
       currentTemp = weather_info["main"]["temp"].to_f
       if currentTemp > '25.4'.to_f
         @season = 'Summer Hottt'.to_s
@@ -49,8 +58,6 @@ class MainPagesController < ApplicationController
       else
         @season = 'Autumn awww the sakura'.to_s
       end
-      # @displayForecast2 = weather_forecast["main"]["temp_min"].to_s + "°C"
-      #  @displayForecast3 = weather_forecast["main"]["temp_max"].to_s + "°C"
 
   end
   
