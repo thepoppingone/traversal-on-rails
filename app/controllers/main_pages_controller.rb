@@ -1,11 +1,15 @@
 class MainPagesController < ApplicationController
 
   require 'open_weather'
+  @team_page = false
 
   def home
+    @html_title = "Traversal - Home"
   end
 
   def list_results
+    @html_title = "Traversal - Results"  
+    
   @city = params[:city]
   @start_date_year = params[:start_date]
 
@@ -51,11 +55,12 @@ class MainPagesController < ApplicationController
   end
   
   def about_us
-    
+      @html_title = "Traversal Team"
+      @team_page = true
   end
   
   def contact_us
-    
+      @html_title = "Traversal Contact Us"
   end
   
 end
