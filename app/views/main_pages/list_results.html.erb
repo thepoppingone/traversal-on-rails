@@ -1,6 +1,6 @@
 
 <div class="container">
-  
+
 <div class="col s12 center-align">
   <h2 class="section-heading">Weather Forecast Generated</h2>
   <h4 class="section-subheading text-muted">Check the information below!</h4>
@@ -12,6 +12,8 @@
       <h4>The Weather Today <%=Date.today%> For:</h4>
       <%= @city %>
       <br/>
+      <%= image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}.jpg" %>
+      <br/
       <h4>Season</h4>
       <%= @season %>
       <h4>Average temperature</h4>
