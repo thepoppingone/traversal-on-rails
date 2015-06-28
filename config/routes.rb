@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :items
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
   post 'main_pages/list_results' => 'main_pages#list_results'
   
@@ -7,7 +8,6 @@ Rails.application.routes.draw do
 
   root :to => 'main_pages#home'
 
-  resources :items
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

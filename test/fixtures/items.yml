@@ -2,14 +2,14 @@
 
 one:
   name: MyString
-  type: 
-  minTemperature: 9.99
-  maxTemperature: 9.99
   season: MyString
+  itemType: MyString
+  minTemp: 1
+  maxTemp: 1
 
 two:
   name: MyString
-  type: 
-  minTemperature: 9.99
-  maxTemperature: 9.99
   season: MyString
+  itemType: MyString
+  minTemp: 1
+  maxTemp: 1

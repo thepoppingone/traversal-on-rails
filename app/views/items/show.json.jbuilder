@@ -1,1 +1,1 @@
-json.extract! @item, :id, :name, :type, :minTemperature, :maxTemperature, :season, :created_at, :updated_at
+json.extract! @item, :id, :name, :season, :itemType, :minTemp, :maxTemp, :created_at, :updated_at
