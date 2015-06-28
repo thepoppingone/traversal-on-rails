@@ -49,4 +49,13 @@ class MainPagesController < ApplicationController
       #  @displayForecast3 = weather_forecast["main"]["temp_max"].to_s + "°C"
 
   end
+  
+  def about_us
+    
+  end
+  
+  def contact_us
+    
+  end
+  
 end

@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
   post 'main_pages/list_results' => 'main_pages#list_results'
+  
+  get 'main_pages/about_us' => 'main_pages#about_us', :as => :traversal_about_us
+  get 'main_pages/contact_us' => 'main_pages#contact_us', :as => :traversal_contact_us
 
   root :to => 'main_pages#home'
 
