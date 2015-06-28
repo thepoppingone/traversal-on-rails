@@ -1,6 +1,7 @@
 <div class="col-lg-12 text-center">
   <h2 class="section-heading">Weather Forecast Generated</h2>
   <h3 class="section-subheading text-muted">Check the information below!</h3>
+  <br/>
 </div>
 
 <div class="container-fluid">
@@ -9,6 +10,8 @@
       <h3>The Weather Today <%=Date.today%> For:</h3>
       <%= @city %>
       <br/>
+      <h3>Season</h3>
+      <%= @testString %>
       <h3>Average temperature</h3>
       <%= @displayString %>
       <br/>
@@ -19,15 +22,15 @@
       <%= @displayString3%>
     </div>
   </div>
-  
+
   <br/>
-  
+
   <div class="row jumbotron">
     <div class="text-center">
       <h3>The Weather Forecast For Next Two Weeks (Average Temperature Only):</h3>
       <%= @city %>
       <br/>
-      
+
       <div class="row">
       <% @displayForecastArray.each_with_index do |w, index|%>
       <div class="col-md-3">
@@ -37,7 +40,7 @@
      <% break if index == 13%>
       <% end %>
     </div>
-      
+
     </div>
   </div>
 </div>
