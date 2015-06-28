@@ -41,13 +41,13 @@ class MainPagesController < ApplicationController
 
       currentTemp = weather_info["main"]["temp"].to_f
       if currentTemp > '25.4'.to_f
-        @testString = 'Summer HOTTTTTTTTTTTTTTTTTTTTTTT'.to_s
+        @season = 'Summer Hottt'.to_s
       elsif currentTemp < '14.4'.to_f
-        @testString = 'Winter Do you want to build a snowman?'.to_s
+        @season = 'Winter Do you want to build a snowman?'.to_s
       elsif currentTemp > '14.4'.to_f and currentTemp < '18.2'.to_f
-        @testString = 'Spring its time for cny'.to_s
+        @season = 'Spring its time for cny'.to_s
       else
-        @testString = 'Autumn awww the sakura'.to_s
+        @season = 'Autumn awww the sakura'.to_s
       end
       # @displayForecast2 = weather_forecast["main"]["temp_min"].to_s + "°C"
       #  @displayForecast3 = weather_forecast["main"]["temp_max"].to_s + "°C"
@@ -61,6 +61,7 @@ class MainPagesController < ApplicationController
   
   def contact_us
       @html_title = "Traversal Contact Us"
+      @team_page = true
   end
   
 end
