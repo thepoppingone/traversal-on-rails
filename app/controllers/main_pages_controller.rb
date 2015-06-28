@@ -61,7 +61,7 @@ class MainPagesController < ApplicationController
 
       def find_image_by_city(city) #returns as a JSON
          #use HTTP to call random APIs using a query string
-          HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=df3839f752aa839b3ea7e167b6f7394b&safe_search=1&per_page=10&page=1&format=json&nojsoncallback=1', :query => {:tags => city})
+          HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=df3839f752aa839b3ea7e167b6f7394b&safe_search=1&per_page=10&page=1&format=json&nojsoncallback=1&tags=landscape', :query => {:tags => city})
       end
       cityImage = JSON.parse(find_image_by_city(@city).body)
       @id = cityImage["photos"]["photo"].first["id"]
