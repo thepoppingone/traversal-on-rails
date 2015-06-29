@@ -1,12 +1,12 @@
 <%
-@dynamic_bg = "background: 
+@dynamic_bg = "background:
   linear-gradient(
     rgba(0, 0, 0, 0.3),
     rgba(0, 0, 0, 0.3)
   ),
-  url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}.jpg);"
+  url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_h.jpg) no-repeat center center fixed;"
 %>
-<div class="blue lighten-5 col s12 center-align">
+<div class="col s12 center-align">
   <br/>
   <h2 class="">Weather Forecast Generated</h2>
   <h4 class="">Check the information below!</h4>
@@ -18,7 +18,7 @@
       <h4>The Weather Today <%=Date.today%> For:</h4>
       <%= @city %>
       <br/>
-      <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_k.jpg" %>
+      <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %>
       <br/>
       <h4>Season</h4>
       <%= @season%>
