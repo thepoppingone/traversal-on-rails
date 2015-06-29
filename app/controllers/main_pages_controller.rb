@@ -58,6 +58,10 @@ class MainPagesController < ApplicationController
       else
         @season = 'Autumn'.to_s
       end
+      
+      #@season = @season.downcase
+      
+      @itemList = Item.where(:season => @season).pluck(:name)
 
       def find_image_by_city(city) #returns as a JSON
          #use HTTP to call random APIs using a query string
@@ -68,7 +72,6 @@ class MainPagesController < ApplicationController
       @farmId = cityImage["photos"]["photo"].first["farm"]
       @secretId = cityImage["photos"]["photo"].first["secret"]
       @serverId = cityImage["photos"]["photo"].first["server"]
-
 
   end
 

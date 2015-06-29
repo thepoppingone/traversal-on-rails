@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :items
+  
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
   post 'main_pages/list_results' => 'main_pages#list_results'
   
