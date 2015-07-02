@@ -48,12 +48,14 @@ gem 'rails_12factor'
 
 group :production do
   gem 'thin'
+  gem 'pg'
 
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'pg'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
