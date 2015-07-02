@@ -8,6 +8,16 @@
         <li><a href="<%= traversal_about_us_path%>">About Us</a></li>
         <li><a href="<%= traversal_contact_us_path%>">Contact Us</a></li>
       </ul>
+      <ul class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+           <strong><%= current_user.email %></strong>.
+          <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %> </li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
       <ul class="side-nav" id="mobile-traversal">
         <li class="active"><a href="<%= traversal_home_path%>">Home</a></li>
         <li><a href="<%= traversal_about_us_path%>">About Us</a></li>

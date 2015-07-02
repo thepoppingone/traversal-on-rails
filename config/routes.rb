@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :items
   
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
