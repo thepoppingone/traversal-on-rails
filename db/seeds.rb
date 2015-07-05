@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+open("tmp/cities15000.txt") do |cities|
+  cities.read.each_line do |city|
+    city_data = city.chomp.split("\t")
+    City.create!(:name => city_data[1], :country_code => city_data[8])
+  end
+end
