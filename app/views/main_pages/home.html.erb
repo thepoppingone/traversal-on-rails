@@ -23,6 +23,13 @@
       <%= submit_tag "Submit", class: "btn btn-primary" %>
       
       <% end %>
+      
+      <%=form_tag({controller: "main_pages", action: "list_results"}, method: "get", id: "cities_search") do%>
+      
+      <%= label_tag :city, nil, class: "white-text" %>
+      <%= text_field_tag :city, nil, class: "white-text", placeholder: "Testing city" %>
+        <%= submit_tag "Submit", class: "btn btn-primary" %>
+      <% end %>
           </div>
         </div>
       </div>

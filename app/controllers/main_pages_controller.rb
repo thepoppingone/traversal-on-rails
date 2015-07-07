@@ -6,6 +6,10 @@ class MainPagesController < ApplicationController
   def home
     @html_title = "Traversal - Home"
   end
+  
+  def city_search
+    @cities = City.search(params[:city]) 
+  end
 
   def list_results
     @html_title = "Traversal - Results"

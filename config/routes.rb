@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :items
   
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
+  get 'main_pages/list_results' => 'main_pages#city_search'
   post 'main_pages/list_results' => 'main_pages#list_results'
   
   get 'main_pages/about_us' => 'main_pages#about_us', :as => :traversal_about_us
