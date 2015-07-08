@@ -3,11 +3,15 @@ Rails.application.routes.draw do
   resources :items
   
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
-  get 'main_pages/list_results' => 'main_pages#city_search'
+  get 'main_pages/list_results' => 'main_pages#city_search', :as => :city_search
   post 'main_pages/list_results' => 'main_pages#list_results'
   
   get 'main_pages/about_us' => 'main_pages#about_us', :as => :traversal_about_us
   get 'main_pages/contact_us' => 'main_pages#contact_us', :as => :traversal_contact_us
+  
+  resources :main_pages do
+  get :autocomplete_city_name, :on => :collection
+  end
 
   root :to => 'main_pages#home'
 

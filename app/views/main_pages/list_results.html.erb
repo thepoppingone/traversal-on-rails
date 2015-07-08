@@ -48,7 +48,7 @@
         <h5>Day: <%=Date.today+(index+1).days%></h5>
          <%= w.to_s+'°C' %>
       </div>
-     <% break if index == 13%>
+     <% break if index == @num_of_days%>
       <% end %>
     </div>
 
