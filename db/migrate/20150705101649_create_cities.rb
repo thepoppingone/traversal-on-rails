@@ -1,8 +1,7 @@
 class CreateCities < ActiveRecord::Migration
   def up
     create_table :cities do |t|
-      t.string :name
-      t.string :country_code
+      t.string :name_and_cc
 
       t.timestamps null: false
     end

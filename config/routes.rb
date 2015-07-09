@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'main_pages/contact_us' => 'main_pages#contact_us', :as => :traversal_contact_us
   
   resources :main_pages do
-  get :autocomplete_city_name, :on => :collection
+  get :autocomplete_city_name_and_cc, :on => :collection
   end
 
   root :to => 'main_pages#home'

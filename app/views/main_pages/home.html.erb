@@ -11,7 +11,7 @@
       <%=form_tag({controller: "main_pages", action: "list_results"}, method: "post") do%>
       
       <%= label_tag :city, nil, class: "white-text" %>
-      <%= autocomplete_field_tag :city, nil, autocomplete_city_name_main_pages_path, class: "white-text", placeholder: "Enter the City name!"  %>
+      <%= autocomplete_field_tag :city, nil, autocomplete_city_name_and_cc_main_pages_path, class: "white-text", placeholder: "Enter the City name!", 'data-auto-focus' => true  %>
 
       <% label_tag :duration %>
       <br/>

@@ -1,16 +1,11 @@
 class MainPagesController < ApplicationController
-  autocomplete :city, :name
-
+  autocomplete :city, :name_and_cc
+  
   require 'open_weather'
   @team_page = false
 
   def home
     @html_title = "Traversal - Home"
-  end
-  
-  def city_search
-    @cities = City.search(params[:city]) 
-  
   end
 
   def list_results

@@ -17,10 +17,9 @@ ActiveRecord::Schema.define(version: 20150705101649) do
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.string   "name"
-    t.string   "country_code"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.string   "name_and_cc"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "items", force: :cascade do |t|
