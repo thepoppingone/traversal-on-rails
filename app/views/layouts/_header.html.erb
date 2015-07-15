@@ -11,6 +11,11 @@
       <ul class="right hide-on-med-and-down">
         <% if user_signed_in? %>
            <strong><%= current_user.email %></strong>.
+           <li>
+             <% if current_user.admin? %>
+               <%= link_to 'Admin', admin_dashboard_path%>
+             <% end %>
+           </li>
           <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
         <% else %>
@@ -25,6 +30,11 @@
         <hr/>
         <% if user_signed_in? %>
           <!-- <strong><%= current_user.email %></strong> -->
+          <li>
+            <% if current_user.admin? %>
+              <%= link_to 'Admin', admin_dashboard_path%>
+            <% end %>
+          </li>
           <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
         <% else %>
