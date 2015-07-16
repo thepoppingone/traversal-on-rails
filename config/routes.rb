@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  devise_for :users
+  devise_for :users, controllers: {  sessions: 'users/sessions' }
   resources :items
   
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home

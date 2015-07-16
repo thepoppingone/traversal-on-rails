@@ -5,6 +5,7 @@ ruby '2.1.6'
 gem 'rails', '4.2.1'
 gem 'foreman'
 gem 'devise'
+gem 'gon' # for ruby to js
 # gem 'pg'
 # Use sqlite3 as the database for Active Record
 
