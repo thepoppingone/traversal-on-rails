@@ -6,6 +6,19 @@ html,body {
   font-family: "raleway",sans-serif;
   }
 
+aside {
+  background-color: #f0f0f0;
+}
+
+.user--show .row aside{
+  padding-top: 20px;
+}
+
+#user--lists{
+  padding: 20px 0 0 20px;
+}
+
+
 #mainBody{
 	background:  
 	  linear-gradient(
@@ -90,6 +103,15 @@ html,body {
       background-image: none;
     }
 		
+    .gravatar {
+  float: left;
+  margin-right: 10px;
+}
+
+.gravatar_edit {
+  margin-top: 15px;
+}
+    
 
 @media screen and (max-width: 1246px) {
 	#mainBody{
