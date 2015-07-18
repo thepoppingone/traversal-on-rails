@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.1.6'
+ruby '2.2.2'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 gem 'foreman'
@@ -17,7 +17,7 @@ gem 'forecast_io'
 gem 'open-weather'
 gem 'httparty'
 gem 'geocoder'
-
+gem "social-buttons", '~> 0.3'
 # admin panel
 gem 'activeadmin'
 gem 'cancan'
