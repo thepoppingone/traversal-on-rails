@@ -13,3 +13,14 @@
   
   </div>
 </div>
+
+<% content_for :script  do%> <!-- type JS code here to add into js at the footer -->
+function initCollapse()
+{
+  $('.collapsible').collapsible({
+    accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+  });
+}
+
+$(document).ajaxComplete(initCollapse);
+<% end %>
