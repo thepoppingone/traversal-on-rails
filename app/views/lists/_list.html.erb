@@ -1,7 +1,7 @@
 <li>
   <div class="collapsible-header"><i class="material-icons">filter_drama</i>
   
-  <%= list.name%> - <%= list.description%>
+  <%= list.name%> - <span class="teal-text text-lighten-2"><%= list.description%></span>
   
   <span class="edit">
     <%= link_to edit_list_path(list), remote: true do %>
@@ -13,10 +13,19 @@
       <button class="btn btn-danger btn-xs">Delete!</button>
     <% end %>
   </span>
-  
-  
+</div>
+  <% @items =  list.items  %>  
+  <div class="collapsible-body">
+  <% if @items.empty? %>
+      <p>List currently has no items</p>
+  <% else %>
+    <p>
+    <% @items.each do |i| %>
+      <%= i.name %><br/>
+    <% end %> 
+    </p>
+   <% end %>
   </div>
-  <div class="collapsible-body"><p>test data</p></div>
 
 
 </li>
