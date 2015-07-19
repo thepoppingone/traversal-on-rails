@@ -1,0 +1,13 @@
+<div id="user--lists" class="col s12 m9 l9">
+  <div style="font-size:2rem;">Lists</div>
+    <ul id="lists" class="collapsible" data-collapsible="expandable">  
+      <%= render @lists %>
+     </ul>
+    
+<br/>
+
+<%= link_to new_list_path(:params => params), remote: true do %>
+  <button class="btn">New List</button>
+<% end %>
+
+<div id="list-form" style="display:none;"></div>

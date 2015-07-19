@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   resources :items
   resources :users
+  resources :lists
   
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
   get 'main_pages/list_results' => 'main_pages#city_search', :as => :city_search

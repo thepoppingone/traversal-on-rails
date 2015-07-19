@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_action :authenticate_user!
+	respond_to :html, :js
 
   def index
    # @users = User.all      old
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
 
  def show 
     @user = User.find(params[:id])
+		@lists = @user.lists
   # @microposts = @user.microposts.paginate(page: params[:page])
   end 
 

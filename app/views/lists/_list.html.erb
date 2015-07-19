@@ -1,0 +1,25 @@
+<li>
+  <div class="collapsible-header"><i class="material-icons">filter_drama</i>
+  
+  <%= list.name%> - <%= list.description%>
+  
+  <span class="edit">
+    <%= link_to edit_list_path(list), remote: true do %>
+      <button class="btn btn-primary btn-xs">Edit</button>
+    <% end %>
+
+    <%= link_to list, remote: true, method: :delete,
+        data: { confirm: 'Are you sure?' } do %>
+      <button class="btn btn-danger btn-xs">Delete!</button>
+    <% end %>
+  </span>
+  
+  
+  </div>
+  <div class="collapsible-body"><p>test data</p></div>
+
+
+</li>
+
+
+   
