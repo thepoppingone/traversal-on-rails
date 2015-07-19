@@ -1,6 +1,6 @@
 ActiveAdmin.register Item do
 
-permit_params :name, :season, :itemType, :list_id, :minTemp, :maxTemp
+permit_params :name, :season, :itemType, :list_id, :minTemp, :maxTemp, :user_id
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
