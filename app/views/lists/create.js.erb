@@ -1,3 +1,4 @@
 $('#lists').html("<%= j (render @lists) %>");
-$('#list-form').slideUp(350);
+$('#new_list_modal').closeModal();
+//$('#list-form').slideUp(350);
 Materialize.toast('List Added!', 4000)
