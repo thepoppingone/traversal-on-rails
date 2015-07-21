@@ -1,7 +1,8 @@
 class ListsController < ApplicationController
-  before_action :all_lists, only: [:index, :create]
+  before_action :all_lists, only: [:index, :create, :update, :destroy]
+  before_action :set_lists, only: [:edit, :update, :destroy]
     respond_to :html, :js
-
+      
     def new
       @list = List.new
       @user = User.find(params[:id])
@@ -18,11 +19,21 @@ class ListsController < ApplicationController
       @list.destroy
       @lists = User.find(@user_id).lists
     end
+    
+    def update
+      @list.update_attributes(list_params)
+      @lists = User.find(list_params[:user_id]).lists
+    end
 
     private
 
       def all_lists
         @lists = List.all
+      end
+      
+      def set_lists
+        @list = List.find(params[:id])
+        @user = @list.user
       end
 
       def list_params
