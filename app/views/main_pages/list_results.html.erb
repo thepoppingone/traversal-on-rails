@@ -6,6 +6,15 @@
   ),
   url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg)  center fixed;"
 %>
+
+<div id="owl-example" class="owl-carousel">
+  <div><% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %></div>
+  <div><% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %></div>
+  <div><% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %></div>
+  <div><% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %></div>
+</div>
+
+
 <div class="col s12 center-align">
   <br/>
   <h2 class="">Weather Forecast Generated</h2>
@@ -13,9 +22,10 @@
   <br/>
 </div>
 
-  <div style="<%=@dynamic_bg%>" class="module-background white-text row">
+
+<div style="<%=@dynamic_bg%>" class="module-background white-text row">
     <div class="center-align">
-      <h4>The Weather Today <%=Date.today%> For:</h4>
+      <h4>The Weather Today <%=Date.today%>  <%= image_tag "http://openweathermap.org/img/w/#{@weatherIcon2}.png" %> For:</h4>
       <%= @city %>
       <br/>
       <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %>
@@ -34,7 +44,7 @@
   </div>
 
   <div class="clearer"></div>
-  
+
 </div>
   <div class="row">
     <div class="col s12 l12 grey lighten-3 text-center">
@@ -54,7 +64,7 @@
 
     </div>
   </div>
-  
+
   <div class="row center-align">
     <h3> Items to bring for <%= @season%> weather</h3>
     <ul>

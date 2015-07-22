@@ -2,6 +2,12 @@
 <html>
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Important Owl stylesheet -->
+<link rel="stylesheet" href="app/assets/stylesheets/owl.carousel.css">
+
+<!-- Default Theme -->
+<link rel="stylesheet" href="app/assets/stylesheets/owl.theme.css">
+
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,6 +20,8 @@
   <%= javascript_include_tag "autocomplete-rails.js" %>
   <%= csrf_meta_tags %>
   <script src="//use.typekit.net/enm1ixs.js"></script>
+  <script src="jquery-1.9.1.min.js"></script>
+  <script src="app/assets/javascripts/owl.carousel.js"></script>
   <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
@@ -29,8 +37,11 @@
 <script>
   $(document).ready(function(){
     // Initialize collapse button
- $(".button-collapse").sideNav();
- 
+  $(".button-collapse").sideNav();
+  $("#owl-example").owlCarousel({
+    navigation:true,
+    singleItem:true
+  });
  });
  </script>
 </footer>

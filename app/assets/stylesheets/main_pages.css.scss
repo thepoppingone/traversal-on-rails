@@ -20,10 +20,10 @@ aside {
 
 
 #mainBody{
-	background:  
+	background:
 	  linear-gradient(
 		rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)	
+		rgba(0, 0, 0, 0.5)
 	),image-url('home-background.jpg') no-repeat center fixed;
 	padding-top: 80px;
 
@@ -51,8 +51,6 @@ aside {
   display: block;
   clear: both;
 }
-
-
 /* IMPORTANT FOR AUTOCOMPLETE UI */
 		.ui-autocomplete {
 		  position: absolute;
@@ -82,7 +80,7 @@ aside {
 		  background-clip: padding-box;
 		  *border-right-width: 2px;
 		  *border-bottom-width: 2px;
-		 
+
 		  .ui-menu-item > a.ui-corner-all {
 		    display: block;
 		    padding: 3px 15px;
@@ -102,7 +100,7 @@ aside {
       -moz-border-radius: 0px;
       background-image: none;
     }
-		
+
     .gravatar {
   float: left;
   margin-right: 10px;
@@ -111,7 +109,7 @@ aside {
 .gravatar_edit {
   margin-top: 15px;
 }
-    
+
 
 @media screen and (max-width: 1246px) {
 	#mainBody{
@@ -128,4 +126,3 @@ aside {
 		height: 92vh;
 	}
 }
-

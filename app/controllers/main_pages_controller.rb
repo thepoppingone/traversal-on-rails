@@ -1,6 +1,6 @@
 class MainPagesController < ApplicationController
   autocomplete :city, :name_and_cc
-  
+
   require 'open_weather'
   @team_page = false
 
@@ -34,6 +34,8 @@ class MainPagesController < ApplicationController
     @displayString = weather_info["main"]["temp"].to_s + "°C"
     @displayString2 = weather_info["main"]["temp_min"].to_s + "°C"
     @displayString3 = weather_info["main"]["temp_max"].to_s + "°C"
+    @weatherIcon = weather_info["weather"]
+    @weatherIcon2 = @weatherIcon[0]["icon"]
 
     weather_forecast = JSON.parse(find_by_city_forecast(@city, 14).body)
     #puts find_by_city_forecast(@city,14).body
@@ -44,7 +46,7 @@ class MainPagesController < ApplicationController
       puts w["main"]
       @displayForecastArray.push w["main"]["temp"]
     end
-    
+
       @lat_long = get_lat_long_by_city_name(@city)
 
       currentTemp = weather_info["main"]["temp"].to_f
@@ -57,9 +59,9 @@ class MainPagesController < ApplicationController
       else
         @season = 'Autumn'.to_s
       end
-      
+
       #@season = @season.downcase
-      
+
       @itemList = Item.where(:season => @season).pluck(:name)
 
       def find_image_by_city(city) #returns as a JSON
