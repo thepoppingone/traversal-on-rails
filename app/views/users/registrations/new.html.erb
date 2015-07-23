@@ -6,12 +6,12 @@
 
   <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true, autocomplete: "off"%>
+    <%= f.text_field :username, autofocus: true %>
   </div>
 
   <div class="field">
     <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: Detrue, autocomplete: "off"%>
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "off"%>
   </div>
 
   <div class="field">
@@ -26,10 +26,9 @@
 
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email %>
+    <%= f.email_field :email, :value => @userEmail.to_s %>
   </div>
 
-  <% if f.object.password_required? %>
   <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
@@ -42,7 +41,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-  <% end %>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
