@@ -14,7 +14,7 @@
     <% end %>
   </span>
 </div>
-  <% @items =  list.items  %>  
+  <% @items =  list.items.order("id ASC")  %>  
   <div class="collapsible-body">
       <%= render partial: "items/list_item", :locals => {:list_id => list.id }%>
    <br>

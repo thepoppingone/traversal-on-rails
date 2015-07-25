@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item  = Item.create(item_params)
-    @items = List.find(item_params[:list_id]).items
+    @items = List.find(item_params[:list_id]).items.order("id ASC")
     @list_id = item_params[:list_id]
   end
 
@@ -36,7 +36,7 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1.json
   def update
     @item.update_attributes(item_params)
-    @items = List.find(item_params[:list_id]).items
+    @items = List.find(item_params[:list_id]).items.order("id ASC")
     @list_id = @item.list.id
   end
 
@@ -45,11 +45,11 @@ class ItemsController < ApplicationController
   def destroy
     @list_id = @item.list.id
     @item.destroy
-    @items = List.find(@list_id).items
+    @items = List.find(@list_id).items.order("id ASC")
   end
   
   def list_items
-    @items = Item.where(params[:list_id])
+    @items = Item.where(params[:list_id]).order("id ASC")
     
   end
 
