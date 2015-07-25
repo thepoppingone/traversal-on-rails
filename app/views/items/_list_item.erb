@@ -11,7 +11,7 @@
         <td><%= item.name %></td>
         <td><%= item.list_id %></td>
         <td>
-          <%= link_to edit_item_path(item), remote: true do %>
+          <%= link_to edit_item_path(item, :list_id => item.list_id), remote: true do %>
               <i class="small material-icons grey-text text-darken-1">edit</i>
           <% end %>
         </td>

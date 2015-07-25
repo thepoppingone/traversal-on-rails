@@ -20,8 +20,8 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
-    @item.update_attributes(item_params)
-    @items = List.find(item_params[:list_id]).items
+    @item = Item.find(params[:id])
+    @list = @item.list
   end
 
   # POST /items
@@ -35,15 +35,9 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1
   # PATCH/PUT /items/1.json
   def update
-    respond_to do |format|
-      if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
-        format.json { render :show, status: :ok, location: @item }
-      else
-        format.html { render :edit }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+    @item.update_attributes(item_params)
+    @items = List.find(item_params[:list_id]).items
+    @list_id = @item.list.id
   end
 
   # DELETE /items/1
