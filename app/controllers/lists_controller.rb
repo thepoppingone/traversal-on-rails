@@ -10,25 +10,25 @@ class ListsController < ApplicationController
 
     def create
       @list  = List.create(list_params)
-      @lists = User.find(list_params[:user_id]).lists
+      @lists = User.find(list_params[:user_id]).lists.order("id ASC")
     end
     
     def destroy
       @list = List.find(params[:id])
       @user_id = @list.user_id
       @list.destroy
-      @lists = User.find(@user_id).lists
+      @lists = User.find(@user_id).lists.order("id ASC")
     end
     
     def update
       @list.update_attributes(list_params)
-      @lists = User.find(list_params[:user_id]).lists
+      @lists = User.find(list_params[:user_id]).lists.order("id ASC")
     end
 
     private
 
       def all_lists
-        @lists = List.all
+        @lists = List.all.order("id ASC")
       end
       
       def set_lists

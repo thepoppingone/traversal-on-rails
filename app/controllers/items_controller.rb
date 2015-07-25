@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  respond_to :html, :js
+  
   # GET /items
   # GET /items.json
   def index
-    @items = Item.all
+    @items = Item.all.order("id ASC")
   end
 
   # GET /items/1
@@ -19,22 +20,16 @@ class ItemsController < ApplicationController
 
   # GET /items/1/edit
   def edit
+    @item.update_attributes(item_params)
+    @items = List.find(item_params[:list_id]).items
   end
 
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(item_params)
-
-    respond_to do |format|
-      if @item.save
-        format.html { redirect_to @item, notice: 'Item was successfully created.' }
-        format.json { render :show, status: :created, location: @item }
-      else
-        format.html { render :new }
-        format.json { render json: @item.errors, status: :unprocessable_entity }
-      end
-    end
+    @item  = Item.create(item_params)
+    @items = List.find(item_params[:list_id]).items
+    @list_id = item_params[:list_id]
   end
 
   # PATCH/PUT /items/1
@@ -54,11 +49,14 @@ class ItemsController < ApplicationController
   # DELETE /items/1
   # DELETE /items/1.json
   def destroy
+    @list_id = @item.list.id
     @item.destroy
-    respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    @items = List.find(@list_id).items
+  end
+  
+  def list_items
+    @items = Item.where(params[:list_id])
+    
   end
 
   private

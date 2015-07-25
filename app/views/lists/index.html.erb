@@ -7,8 +7,6 @@
       
   <br/>
 
-
-
   <!-- Modal Trigger -->
   <%= link_to new_list_path(:params => params), remote: true do %>
     <button class="waves-effect waves-light btn">New List</button>
@@ -27,6 +25,19 @@
       <a id="list_new_submit_btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Create</a>
     </div>
   </div>
+  
+  <div id="new_item_modal" class="modal">
+    <div class="modal-content">
+      <h4>New Item Information</h4>
+      <p id="item-content">
+      
+      </p>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Cancel</a>
+      <a id="item_new_submit_btn" href="#" class="modal-action modal-close waves-effect waves-green btn-flat">Create</a>
+    </div>
+  </div>
   <!-- insert a jquery code to click the create which is hidden to submit the new listing -->
   
   <!-- legacy purposes -->
@@ -37,6 +48,10 @@
   <% content_for :script  do%> <!-- type JS code here to add into js at the footer -->
   $("#list_new_submit_btn").on("click", function(){
     $("#list_new_submit").click();
+  });
+  
+  $("#item_new_submit_btn").on("click", function(){
+    $("#item_new_submit").click();
   });
   <% end %>
 

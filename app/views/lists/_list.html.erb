@@ -16,14 +16,10 @@
 </div>
   <% @items =  list.items  %>  
   <div class="collapsible-body">
-  <% if @items.empty? %>
-      <p>List currently has no items</p>
-  <% else %>
-    <p>
-    <% @items.each do |i| %>
-      <%= i.name %><br/>
-    <% end %> 
-    </p>
+      <%= render partial: "items/list_item", :locals => {:list_id => list.id }%>
+   <br>
+   <%= link_to new_item_path(:list_id => list.id), remote: true do %>
+     <button class="waves-effect waves-light btn blue">New Item</button>
    <% end %>
   </div>
 

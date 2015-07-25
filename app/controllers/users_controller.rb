@@ -12,7 +12,7 @@ class UsersController < ApplicationController
 
  def show 
     @user = User.find(params[:id])
-		@lists = @user.lists
+		@lists = @user.lists.order("id ASC")
   # @microposts = @user.microposts.paginate(page: params[:page])
   end 
 
