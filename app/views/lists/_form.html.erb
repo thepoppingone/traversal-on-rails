@@ -1,6 +1,6 @@
 <%= form_for @list, remote: true do |f|   %>
   <%= f.label  :name                      %>
-  <%= f.text_field  :name, :autofocus => true                  %>
+  <%= f.text_field  :name, :autofocus => true, id: "list_name"              %>
   <%= f.label  :description %>
   <%= f.text_field  :description                     %>
   <%= f.hidden_field :user_id, :value => @user.id %>
