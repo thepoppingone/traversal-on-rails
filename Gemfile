@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.3.4'
 gem 'materialize-sass'
 
+# weather logic
 gem 'forecast_io'
 gem 'open-weather'
 gem 'httparty'
