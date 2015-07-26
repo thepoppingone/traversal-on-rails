@@ -43,8 +43,12 @@ class MainPagesController < ApplicationController
     @displayForecastHash = weather_forecast["list"] #+ "°C"
     @displayForecastArray = []
     @displayForecastHash.each do |w|
-      puts w["main"]
       @displayForecastArray.push w["main"]["temp"]
+    end
+
+    @displayForecastArray2 = []
+    @displayForecastHash.each do |v|
+      @displayForecastArray2.push v["weather"][0]["icon"]
     end
 
       @lat_long = get_lat_long_by_city_name(@city)

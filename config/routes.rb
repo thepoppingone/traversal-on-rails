@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
   ActiveAdmin.routes(self)
-  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations", omniauth_callbacks: "users/omniauth_callbacks" }
+  devise_for :users, controllers: { sessions: "users/sessions", registrations: "users/registrations" }
   resources :items
   resources :users
 
-  devise_scope :user do
-  get 'sign_out', :to => 'devise/sessions#destroy'
-  end
 
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
   get 'main_pages/list_results' => 'main_pages#city_search', :as => :city_search

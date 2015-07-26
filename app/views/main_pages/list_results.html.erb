@@ -49,6 +49,7 @@
       <% @displayForecastArray.each_with_index do |w, index|%>
       <div class="col s12 m6 l3">
         <h5>Day: <%=Date.today+(index+1).days%></h5>
+        <%= image_tag "http://openweathermap.org/img/w/#{@displayForecastArray2[index]}.png" %>
          <%= w.to_s+'°C' %>
       </div>
      <% break if index == @num_of_days%>
