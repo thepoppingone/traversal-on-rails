@@ -20,8 +20,8 @@
     <%= f.text_field :season %>
   </div>
   <div class="field">
-    <%= f.label :itemType %><br>
-    <%= f.text_field :itemType %>
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity, :min => 1, step: 1.0, value: 1 %>
   </div>
   <div>
     <%= f.hidden_field :list_id, :value => params[:list_id] %>

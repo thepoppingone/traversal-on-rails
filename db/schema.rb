@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150715123457) do
+ActiveRecord::Schema.define(version: 20150726021519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,12 +40,10 @@ ActiveRecord::Schema.define(version: 20150715123457) do
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.string   "season"
-    t.string   "itemType"
-    t.integer  "minTemp"
-    t.integer  "maxTemp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "list_id"
+    t.integer  "quantity"
   end
 
   add_index "items", ["list_id"], name: "index_items_on_list_id", using: :btree
