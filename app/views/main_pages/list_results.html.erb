@@ -11,7 +11,7 @@
 <div class="col s12 center-align">
   <br/>
   <h2 class="">Weather Forecast Generated</h2>
-  <h4 class="">Check the information below!</h4>
+  <h4 class="">Check your <%=@num_of_days%> days forecast below!</h4>
   <br/>
 </div>
 
@@ -52,7 +52,7 @@
         <%= image_tag "http://openweathermap.org/img/w/#{@displayForecastArray2[index]}.png" %>
          <%= w.to_s+'°C' %>
       </div>
-     <% break if index == @num_of_days%>
+     <% break if index == @num_of_days.to_i-2 #for logic number of days%>
       <% end %>
     </div>
 

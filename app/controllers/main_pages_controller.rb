@@ -12,7 +12,7 @@ class MainPagesController < ApplicationController
     @html_title = "Traversal - Results"
 
     @city = params[:city]
-    @start_date_year = params[:start_date]
+    @num_of_days = params[:duration]
 
       #@displayString = OpenWeather::Current.city(@city) Using openweather gem
 
@@ -78,7 +78,7 @@ class MainPagesController < ApplicationController
       @secretId = cityImage["photos"]["photo"].first["secret"]
       @serverId = cityImage["photos"]["photo"].first["server"]
 
-      @num_of_days = 13
+    
   end
 
   def about_us

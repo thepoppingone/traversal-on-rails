@@ -11,14 +11,10 @@
       <%=form_tag({controller: "main_pages", action: "list_results"}, method: "post") do%>
       
       <%= label_tag :city, nil, class: "white-text" %>
-      <%= autocomplete_field_tag :city, nil, autocomplete_city_name_and_cc_main_pages_path, class: "white-text", placeholder: "Enter the City name!", 'data-auto-focus' => true  %>
+      <%= autocomplete_field_tag :city, nil, autocomplete_city_name_and_cc_main_pages_path, class: "white-text", placeholder: "Enter the City name", :autofocus => true, :required => true %>
 
-      <% label_tag :duration %>
-      <br/>
-      <%= select_date Date.today, prefix: :start_date, class: "hide"%>
-      <br/>
-      <%= select_date Date.today, prefix: :end_date, class: "hide" %>
-      <br/>
+      <%= label_tag :duration, nil, class: "white-text" %>
+      <%= number_field_tag :duration, nil, min: 1, max: 21, step: 1, class: "white-text", placeholder: "Enter the number of days", :required => true %>
       <br/>
       <%= submit_tag "Submit", class: "btn btn-primary" %>
       
