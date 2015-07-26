@@ -6,6 +6,8 @@
   ),
   url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg)  center fixed;"
 %>
+
+
 <div class="col s12 center-align">
   <br/>
   <h2 class="">Weather Forecast Generated</h2>
@@ -13,9 +15,10 @@
   <br/>
 </div>
 
-  <div style="<%=@dynamic_bg%>" class="module-background white-text row">
+
+<div style="<%=@dynamic_bg%>" class="module-background white-text row">
     <div class="center-align">
-      <h4>The Weather Today <%=Date.today%> For:</h4>
+      <h4>The Weather Today <%=Date.today%>  <%= image_tag "http://openweathermap.org/img/w/#{@weatherIcon2}.png" %> For:</h4>
       <%= @city %>
       <br/>
       <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %>
@@ -34,18 +37,19 @@
   </div>
 
   <div class="clearer"></div>
-  
+
 </div>
   <div class="row">
     <div class="col s12 l12 grey lighten-3 text-center">
       <h4>The Weather Forecast For Next Two Weeks (Average Temperature Only): </h4>
-      <%= @city + " " + @lat_long.to_s %>
+      <% #@city + " " + @lat_long.to_s %>
       <br/>
 
       <div class="row">
       <% @displayForecastArray.each_with_index do |w, index|%>
       <div class="col s12 m6 l3">
         <h5>Day: <%=Date.today+(index+1).days%></h5>
+        <%= image_tag "http://openweathermap.org/img/w/#{@displayForecastArray2[index]}.png" %>
          <%= w.to_s+'°C' %>
       </div>
      <% break if index == @num_of_days%>
@@ -54,7 +58,7 @@
 
     </div>
   </div>
-  
+
   <div class="row center-align">
     <h3> Items to bring for <%= @season%> weather</h3>
     <ul>
