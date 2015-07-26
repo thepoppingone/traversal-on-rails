@@ -19,6 +19,9 @@ gem 'open-weather'
 gem 'httparty'
 gem 'geocoder'
 
+# social
+gem "social-buttons", '~> 0.3'
+
 # admin panel
 gem 'activeadmin'
 gem 'cancan'
