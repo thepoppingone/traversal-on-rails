@@ -65,8 +65,10 @@ class MainPagesController < ApplicationController
       end
 
       #@season = @season.downcase
+      @season_wrapper = "%"+@season+"%"
 
-      @itemList = Item.where(:season => @season).pluck(:name)
+      @admin_user_id =  User.find_by( email: "admin@traversal.com").id
+      @itemList = List.find_by('user_id = ? AND name LIKE ?', @admin_user_id, @season_wrapper).items.pluck(:name)
 
       def find_image_by_city(city) #returns as a JSON
          #use HTTP to call random APIs using a query string

@@ -39,6 +39,7 @@
   <div class="clearer"></div>
 
 </div>
+<% if @num_of_days.to_i > 1 %>
   <div class="row">
     <div class="col s12 l12 grey lighten-3 text-center">
       <h4>The Weather Forecast For Next Two Weeks (Average Temperature Only): </h4>
@@ -58,6 +59,8 @@
 
     </div>
   </div>
+  
+<% end %>
 
   <div class="row center-align">
     <h3> Items to bring for <%= @season%> weather</h3>
