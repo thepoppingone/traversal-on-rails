@@ -7,93 +7,108 @@ defaults
 ========================================================*/
 html,body {
   font-family: "raleway",sans-serif;
-  }
+}
 
 aside {
   background-color: #f0f0f0;
 }
 
 ::-webkit-input-placeholder {
-   text-align: center;
+  text-align: center;
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   text-align: center;  
+  text-align: center;
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   text-align: center;  
+  text-align: center;
 }
 
-:-ms-input-placeholder {  
-   text-align: center; 
+:-ms-input-placeholder {
+  text-align: center;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
-    -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
 }
 
+
+
+.owl-carousel .owl-item div{
+  padding:5px;
+}
+.owl-carousel .owl-item img{
+  display: block;
+  width: 100%;
+  height: 550px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+
 /* IMPORTANT FOR AUTOCOMPLETE UI */
-		.ui-autocomplete {
-		  position: absolute;
-		  top: 100%;
-		  left: 0;
-		  z-index: 1000;
-		  float: left;
-		  display: none;
-		  min-width: 160px;
-		  _width: 160px;
-		  padding: 4px 0;
-		  margin: 2px 0 0 0;
-		  list-style: none;
-		  background-color: #ffffff;
-		  border-color: #ccc;
-		  border-color: rgba(0, 0, 0, 0.2);
-		  border-style: solid;
-		  border-width: 1px;
-		  -webkit-border-radius: 0px;
-		  -moz-border-radius: 0px;
-		  border-radius: 0px;
-		  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-		  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-		  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-		  -webkit-background-clip: padding-box;
-		  -moz-background-clip: padding;
-		  background-clip: padding-box;
-		  *border-right-width: 2px;
-		  *border-bottom-width: 2px;
-		 
-		  .ui-menu-item > a.ui-corner-all {
-		    display: block;
-		    padding: 3px 15px;
-		    clear: both;
-		    font-weight: normal;
-		    line-height: 18px;
-		    color: #555555;
-		    white-space: nowrap;
-		  }
-		}
-    .ui-widget-content .ui-state-focus {
-      color: #fff;
-      text-decoration: none;
-      background-color: #4994bf;
-      border-radius: 0px;
-      -webkit-border-radius: 0px;
-      -moz-border-radius: 0px;
-      background-image: none;
-    }
+.ui-autocomplete {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  display: none;
+  min-width: 160px;
+  _width: 160px;
+  padding: 4px 0;
+  margin: 2px 0 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border-color: #ccc;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+  -moz-background-clip: padding;
+  background-clip: padding-box;
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+
+  .ui-menu-item > a.ui-corner-all {
+    display: block;
+    padding: 3px 15px;
+    clear: both;
+    font-weight: normal;
+    line-height: 18px;
+    color: #555555;
+    white-space: nowrap;
+  }
+}
+.ui-widget-content .ui-state-focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #4994bf;
+  border-radius: 0px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  background-image: none;
+}
 
 /*===================================================================================================
-  Custom
- ====================================================================================================*/
- 
- 
- /*============================================
-   User
-  ============================================*/
+Custom
+====================================================================================================*/
+
+
+/*============================================
+User
+============================================*/
 .user--show .row aside{
   padding-top: 20px;
 }
@@ -103,30 +118,30 @@ input::-webkit-inner-spin-button {
 }
 
 .gravatar {
-float: left;
-margin-right: 10px;
+  float: left;
+  margin-right: 10px;
 }
 
 .gravatar_edit {
-margin-top: 15px;
+  margin-top: 15px;
 }
 
 
 /*============================================
-  Home
- ============================================*/
+Home
+============================================*/
 
 #mainBody{
-	background:  
-	  linear-gradient(
-		rgba(0, 0, 0, 0.5),
-		rgba(0, 0, 0, 0.5)	
-	),image-url('home-background.jpg') no-repeat center fixed;
-	padding-top: 80px;
+  background:
+  linear-gradient(
+  rgba(0, 0, 0, 0.5),
+  rgba(0, 0, 0, 0.5)
+  ),image-url('home-background.jpg') no-repeat center fixed;
+  padding-top: 80px;
 
-	background-size: cover;
-	width: 100%;
-	height: 92vh;
+  background-size: cover;
+  width: 100%;
+  height: 92vh;
 }
 
 #country_and_duration input{
@@ -135,16 +150,16 @@ margin-top: 15px;
 
 
 /*============================================
-  About us
- ============================================*/
+About us
+============================================*/
 
 .about-us-heading-margin{
-	margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 .module-background{
   background-size: cover ;
-	background-color: white;
+  background-color: white;
   width: 100%;
   height: 500px;
   margin: 0;
@@ -158,21 +173,20 @@ margin-top: 15px;
   clear: both;
 }
 
-    
+
 
 @media screen and (max-width: 1246px) {
-	#mainBody{
-		background	: image-url('home-background.jpg'), linear-gradient(
-	      rgba(0, 0, 0, 0.5),
-	      rgba(0, 0, 0, 0.5)
-	    ), no-repeat center center fixed;
-		padding-top: 30px;
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		-o-background-size: cover;
-		background-size: cover;
-		width: 100%;
-		height: 92vh;
-	}
+  #mainBody{
+    background	: image-url('home-background.jpg'), linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+    ), no-repeat center center fixed;
+    padding-top: 30px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 92vh;
+  }
 }
-

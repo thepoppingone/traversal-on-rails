@@ -30,9 +30,16 @@
   $(document).ready(function(){
     // Initialize collapse button
  $(".button-collapse").sideNav();
-
+ $(".owl-carousel").owlCarousel(
+  {
+    autoPlay: 3000, // Show next and prev buttons
+    slideSpeed : 300,
+    paginationSpeed : 400,
+    singleItem:true
+  }
+);
   <%= yield :script %>
- 
+
  });
 
 

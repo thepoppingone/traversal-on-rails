@@ -12,6 +12,7 @@ gem 'devise'
 gem 'sass-rails', '~> 5.0'
 gem 'bootstrap-sass', '>= 3.3.4'
 gem 'materialize-sass'
+gem 'owlcarousel-rails'
 
 # weather logic
 gem 'forecast_io'
