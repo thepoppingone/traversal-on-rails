@@ -1,12 +1,3 @@
-<%
-@dynamic_bg = "background:
-linear-gradient(
-rgba(0, 0, 0, 0.3),
-rgba(0, 0, 0, 0.3)
-),
-url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg)  center fixed;"
-%>
-
 <div class="owl-carousel">
   <div> <%= image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %> </div>
   <div> <%= image_tag "https://farm#{@farmId2}.staticflickr.com/#{@serverId2}/#{@id2}_#{@secretId2}_b.jpg" %> </div>
@@ -23,7 +14,7 @@ url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.j
 </div>
 
 
-<div style="<%=@dynamic_bg%>" class="module-background white-text row">
+<div class="module-background white-text row grey darken-1">
   <div class="center-align">
     <h4>The Weather Today <%=Date.today%>  <%= image_tag "http://openweathermap.org/img/w/#{@weatherIcon2}.png" %> For:</h4>
     <%= @city %>
@@ -49,7 +40,7 @@ url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.j
 <% if @num_of_days.to_i > 1 %>
 <div class="row">
   <div class="col s12 l12 grey lighten-3 text-center">
-    <h4>The Weather Forecast For Next Two Weeks (Average Temperature Only): </h4>
+    <h4>The Weather Forecast For Next <%=@num_of_days%> days (Average Temperature Only): </h4>
     <% #@city + " " + @lat_long.to_s %>
     <br/>
 
