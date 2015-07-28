@@ -38,7 +38,14 @@
   $(document).ready(function(){
     // Initialize collapse button
   $(".button-collapse").sideNav();
-  $('.slider').slider({full_width: true});
+  $(".owl-carousel").owlCarousel(
+    {
+            autoPlay: 3000, // Show next and prev buttons
+  slideSpeed : 300,
+  paginationSpeed : 400,
+  singleItem:true
+    }
+  );
  });
  </script>
 </footer>

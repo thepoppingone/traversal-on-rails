@@ -6,6 +6,7 @@ gem 'rails', '4.2.1'
 gem 'foreman'
 gem 'devise'
 gem 'omniauth-facebook'
+gem 'owlcarousel-rails'
 # gem 'pg'
 # Use sqlite3 as the database for Active Record
 

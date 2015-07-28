@@ -33,6 +33,24 @@ aside {
 }
 
 
+
+
+
+    .owl-carousel .owl-item div{
+      padding:5px;
+    }
+    .owl-carousel .owl-item img{
+      display: block;
+      width: 100%;
+      height: auto;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+
+
+
+
 .about-us-heading-margin{
 	margin-bottom: 100px;
 }
