@@ -3,10 +3,10 @@
 <head>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Important Owl stylesheet -->
-<link rel="stylesheet" href="app/assets/stylesheets/owl.carousel.css">
+  <link rel="stylesheet" href="app/assets/stylesheets/owl.carousel.css">
 
-<!-- Default Theme -->
-<link rel="stylesheet" href="app/assets/stylesheets/owl.theme.css">
+  <!-- Default Theme -->
+  <link rel="stylesheet" href="app/assets/stylesheets/owl.theme.css">
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,28 +26,28 @@
 </head>
 <body>
   <% if !@team_page %>
-    <%= render 'layouts/header' %>
+  <%= render 'layouts/header' %>
   <% else %>
-    <%= render 'layouts/team_header' %>
+  <%= render 'layouts/team_header' %>
   <% end %>
-   <%= render 'layouts/messages' %>
+  <%= render 'layouts/messages' %>
   <%= yield %>
 </body>
 <footer>
 <script>
-  $(document).ready(function(){
-    // Initialize collapse button
+$(document).ready(function(){
+  // Initialize collapse button
   $(".button-collapse").sideNav();
   $(".owl-carousel").owlCarousel(
     {
-            autoPlay: 3000, // Show next and prev buttons
-  slideSpeed : 300,
-  paginationSpeed : 400,
-  singleItem:true
+      autoPlay: 3000, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
     }
   );
- });
- </script>
+});
+</script>
 </footer>
 <%= debug(params) if Rails.env.development? %>
 </html>

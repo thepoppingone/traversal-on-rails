@@ -73,10 +73,33 @@ class MainPagesController < ApplicationController
           HTTParty.get('https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=df3839f752aa839b3ea7e167b6f7394b&safe_search=1&per_page=10&page=1&format=json&nojsoncallback=1&tag_mode=AND', :query => {:tags => "#{city}&landscape"})
       end
       cityImage = JSON.parse(find_image_by_city(@city).body)
+
+
+
       @id = cityImage["photos"]["photo"].first["id"]
       @farmId = cityImage["photos"]["photo"].first["farm"]
       @secretId = cityImage["photos"]["photo"].first["secret"]
       @serverId = cityImage["photos"]["photo"].first["server"]
+
+      @id2 = cityImage["photos"]["photo"].second["id"]
+      @farmId2 = cityImage["photos"]["photo"].second["farm"]
+      @secretId2 = cityImage["photos"]["photo"].second["secret"]
+      @serverId2 = cityImage["photos"]["photo"].second["server"]
+
+      @id3 = cityImage["photos"]["photo"].third["id"]
+      @farmId3 = cityImage["photos"]["photo"].third["farm"]
+      @secretId3 = cityImage["photos"]["photo"].third["secret"]
+      @serverId3 = cityImage["photos"]["photo"].third["server"]
+
+      @id4 = cityImage["photos"]["photo"].fourth["id"]
+      @farmId4 = cityImage["photos"]["photo"].fourth["farm"]
+      @secretId4 = cityImage["photos"]["photo"].fourth["secret"]
+      @serverId4 = cityImage["photos"]["photo"].fourth["server"]
+
+      @id5 = cityImage["photos"]["photo"].fifth["id"]
+      @farmId5 = cityImage["photos"]["photo"].fifth["farm"]
+      @secretId5 = cityImage["photos"]["photo"].fifth["secret"]
+      @serverId5 = cityImage["photos"]["photo"].fifth["server"]
 
       @num_of_days = 13
   end
