@@ -1,39 +1,28 @@
-
+<div id="mainBody">
   <!-- Services Section -->  
     <section id="country_and_duration">
       <div class="container">
-        <div class="col-lg-12 text-center">
-            <h2 class="section-heading">Travel Packing List Generator</h2>
-            <h3 class="section-subheading text-muted">Enter your details below.</h3>
+        <div class="col s12 m8 l12 center-align">
+            <h2 class="white-text">Travel Packing List Generator</h2>
+            <h3 class="white-text">Enter your destination below.</h3>
         </div>
         <div class="row">
-          <div class="col-md-6 col-md-offset-3">
+          <div class="col s12 m6 l6 offset-m3 offset-l3 center-align">
       <%=form_tag({controller: "main_pages", action: "list_results"}, method: "post") do%>
       
-      <%= label_tag :country %>
-      <%= text_field_tag :country, nil, class: "form-control", placeholder: "Insert automated, dropdownlist of cities" %>
+      <%= label_tag :city, nil, class: "white-text" %>
+      <%= autocomplete_field_tag :city, nil, autocomplete_city_name_and_cc_main_pages_path, class: "white-text", placeholder: "Enter the City name", :autofocus => true, :required => true %>
 
-      <%= label_tag :duration %>
-      <br/>
-      <%= select_date Date.today, prefix: :start_date %>
-      <br/>
-      <%= select_date Date.today, prefix: :end_date %>
-      <br/>
+      <%= label_tag :duration, nil, class: "white-text" %>
+      <%= number_field_tag :duration, nil, min: 1, max: 21, step: 1, class: "white-text", placeholder: "Enter the number of days", :required => true %>
       <br/>
       <%= submit_tag "Submit", class: "btn btn-primary" %>
       
       <% end %>
+
           </div>
         </div>
       </div>
     </section>
+</div>
 
-
-
-    <!-- Portfolio Grid Section -->
-  
-    <!-- jQuery -->
-    <script src="js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>

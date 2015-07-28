@@ -6,6 +6,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
+//= require autocomplete-rails
 //= require turbolinks
-//= require bootstrap-sprockets
+//= require materialize-sprockets
 //= require_tree .
+//= require owl.carousel

@@ -1,30 +1,48 @@
-<!-- Navigation -->
-<nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-            <a class="navbar-brand" href="#">Traversal</a> <!-- REPLACE with an Image-->
-        </div>
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="<%=traversal_home_path%>">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar/">Default</a></li>
-            <li><a href="../navbar-static-top/">Static top</a></li>
-            <li class="active"><a href="./">Fixed top <span class="sr-only">(current)</span></a></li>
-          </ul>
-        </div><!--/.nav-collapse -->
-        
+<div class="navbar-fixed">
+  <nav class="">
+    <div class="nav-wrapper">
+      <a href="<%= traversal_home_path%>" class="brand-logo center">Traversal</a>
+      <a href="#" data-activates="mobile-traversal" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down">
+        <li class="active"><a href="<%= traversal_home_path%>">Home</a></li>
+        <li><a href="<%= traversal_about_us_path%>">About Us</a></li>
+        <li><a href="<%= traversal_contact_us_path%>">Contact Us</a></li>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <% if user_signed_in? %>
+           <li>
+             <% if current_user.admin? %>
+               <%= link_to 'Admin', admin_dashboard_path%>
+             <% end %>
+           </li>
+          <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+          <li><strong><%=link_to current_user.email, user_path(id: current_user.id) %></strong></li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %> </li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
+      <ul class="side-nav" id="mobile-traversal">
+        <li class="active"><a href="<%= traversal_home_path%>">Home</a></li>
+        <li><a href="<%= traversal_about_us_path%>">About Us</a></li>
+        <li><a href="<%= traversal_contact_us_path%>">Contact Us</a></li>
+        <hr/>
+        <% if user_signed_in? %>
+          <!-- <strong><%= current_user.email %></strong> -->
+          <li>
+            <% if current_user.admin? %>
+              <%= link_to 'Admin', admin_dashboard_path%>
+            <% end %>
+          </li>
+          <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+        <% else %>
+          <li><%= link_to "Sign up", new_user_registration_path %> </li>
+          <li><%= link_to "Login", new_user_session_path %></li>
+        <% end %>
+      </ul>
       
     </div>
-    <!-- /.container-fluid -->
-</nav>
+  </nav>
+</div>

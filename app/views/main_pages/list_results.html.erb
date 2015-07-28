@@ -1,10 +1,83 @@
-<div class="col-lg-12 text-center">
-    <h2 class="section-heading">Packing List Generated!</h2>
-    <h3 class="section-subheading text-muted">Check your personalized list below!</h3>
+<%
+@dynamic_bg = "background:
+linear-gradient(
+rgba(0, 0, 0, 0.3),
+rgba(0, 0, 0, 0.3)
+),
+url(https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg)  center fixed;"
+%>
+
+<div class="owl-carousel">
+  <div> <%= image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %> </div>
+  <div> <%= image_tag "https://farm#{@farmId2}.staticflickr.com/#{@serverId2}/#{@id2}_#{@secretId2}_b.jpg" %> </div>
+  <div> <%= image_tag "https://farm#{@farmId3}.staticflickr.com/#{@serverId3}/#{@id3}_#{@secretId3}_b.jpg" %> </div>
+  <div> <%= image_tag "https://farm#{@farmId4}.staticflickr.com/#{@serverId4}/#{@id4}_#{@secretId4}_b.jpg" %> </div>
+  <div> <%= image_tag "https://farm#{@farmId5}.staticflickr.com/#{@serverId5}/#{@id5}_#{@secretId5}_b.jpg" %> </div>
 </div>
 
-<div class="jumbotron">
-  <%= @country %>
-    <%= @displayString.to_s%>
+<div class="col s12 center-align">
+  <br/>
+  <h2 class="">Weather Forecast Generated</h2>
+  <h4 class="">Check your <%=@num_of_days%> days forecast below!</h4>
+  <br/>
 </div>
 
+
+<div style="<%=@dynamic_bg%>" class="module-background white-text row">
+  <div class="center-align">
+    <h4>The Weather Today <%=Date.today%>  <%= image_tag "http://openweathermap.org/img/w/#{@weatherIcon2}.png" %> For:</h4>
+    <%= @city %>
+    <br/>
+    <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %>
+    <br/>
+    <h4>Season</h4>
+    <%= @season%>
+    <h4>Average temperature</h4>
+    <%= @displayString %>
+    <br/>
+    <h4>Minimal temperature</h4>
+    <%= @displayString2%>
+    <br/>
+    <h4>Maximum temperature</h4>
+    <%= @displayString3%>
+  </div>
+</div>
+
+<div class="clearer"></div>
+
+</div>
+<% if @num_of_days.to_i > 1 %>
+<div class="row">
+  <div class="col s12 l12 grey lighten-3 text-center">
+    <h4>The Weather Forecast For Next Two Weeks (Average Temperature Only): </h4>
+    <% #@city + " " + @lat_long.to_s %>
+    <br/>
+
+    <div class="row">
+      <% @displayForecastArray.each_with_index do |w, index|%>
+      <div class="col s12 m6 l3">
+        <h5>Day: <%=Date.today+(index+1).days%></h5>
+        <%= image_tag "http://openweathermap.org/img/w/#{@displayForecastArray2[index]}.png" %>
+        <%= w.to_s+'°C' %>
+      </div>
+      <% break if index == @num_of_days.to_i-2 #for logic number of days%>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<% end %>
+
+<div class="row center-align">
+  <h3> Items to bring for <%= @season%> weather</h3>
+  <ul>
+    <% @itemList.to_a.each do |i|%>
+    <li>
+      <h5>
+        <%= i %>
+      </h5>
+    </li>
+    <% end %>
+  </ul>
+</div>

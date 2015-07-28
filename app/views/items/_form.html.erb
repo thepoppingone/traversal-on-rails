@@ -1,4 +1,4 @@
-<%= form_for(@item) do |f| %>
+<%= form_for @item, remote: true do |f| %>
   <% if @item.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@item.errors.count, "error") %> prohibited this item from being saved:</h2>
@@ -13,25 +13,20 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :type %><br>
-    <%= f.text_field :type %>
-  </div>
-  <div class="field">
-    <%= f.label :minTemperature %><br>
-    <%= f.text_field :minTemperature %>
-  </div>
-  <div class="field">
-    <%= f.label :maxTemperature %><br>
-    <%= f.text_field :maxTemperature %>
+    <%= f.text_field :name, id: "item_name" %>
   </div>
   <div class="field">
     <%= f.label :season %><br>
     <%= f.text_field :season %>
   </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.number_field :quantity, :min => 1, step: 1.0, value: 1 %>
+  </div>
+  <div>
+    <%= f.hidden_field :list_id, :value => params[:list_id] %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+  <%= f.submit "Create", :id => "item_new_submit", :class => "hide" %>
   </div>
 <% end %>
