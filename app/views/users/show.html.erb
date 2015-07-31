@@ -1,16 +1,16 @@
 <div class="user--show">
   <div class="row">
     <aside class="col s12 m3 l3">
-      <div class="col s3 m12 l12">  <%=  gravatar_for(@user) %></div>
-      <div class="col s9 m12 l12"><h5> <%= @user.first_name %> <%= @user.last_name%></h5> 
+      <div class="col s3 m12 l12"> <li class="round-image-50"><%= image_tag(current_user.avatar.url(:thumb)) %></li></div>
+      <div class="col s9 m12 l12"><h5> <%= @user.first_name %> <%= @user.last_name%></h5>
        <%= @user.email %>
        <br/><%= @user.bio %> </div>
     </aside>
 
  <%= render template: "lists/index"%>
- 
+
   </div>
-  
+
   </div>
 </div>
 
