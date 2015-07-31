@@ -4,20 +4,20 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <!--<div class="field">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true, autocomplete: "off"%>
   </div>
-  
+
   <div class="field">
     <%= f.label :last_name %><br />
     <%= f.text_field :last_name, autocomplete: "off" %>
   </div>
-  
+
   <div class="field">
     <%= f.label :Tell_us_about_yourself%><br />
     <%= f.text_field :bio %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= f.label :email %><br />
@@ -41,6 +41,4 @@
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
 </div>
