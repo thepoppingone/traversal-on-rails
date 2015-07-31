@@ -37,25 +37,6 @@ ActiveRecord::Schema.define(version: 20150731132156) do
     t.datetime "updated_at",  null: false
   end
 
-  create_table "fb_users", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.string   "image"
-    t.string   "token"
-    t.datetime "expires_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "fbs", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "items", force: :cascade do |t|
     t.string   "name"
     t.string   "season"
@@ -78,14 +59,6 @@ ActiveRecord::Schema.define(version: 20150731132156) do
 
   add_index "lists", ["user_id"], name: "index_lists_on_user_id", using: :btree
 
-  create_table "user2s", force: :cascade do |t|
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -105,9 +78,6 @@ ActiveRecord::Schema.define(version: 20150731132156) do
     t.string   "last_name"
     t.string   "bio"
     t.boolean  "admin"
-    t.string   "provider"
-    t.string   "uid"
-    t.string   "name"
     t.string   "avatar_file_name"
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
