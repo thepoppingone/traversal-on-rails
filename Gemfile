@@ -21,6 +21,12 @@ gem 'open-weather'
 gem 'httparty'
 gem 'geocoder'
 
+# omniauth
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+gem 'omniauth-linkedin'
+
 # social
 gem "social-buttons", '~> 0.3'
 
