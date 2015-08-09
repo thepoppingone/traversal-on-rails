@@ -1,5 +1,5 @@
 <div class="container">
-<h2>Sign up  <%= session["devise.facebook_data"] %></h2>
+<h2>Sign up </h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
@@ -24,8 +24,6 @@
     <%= f.email_field :email, :value => request.env["omniauth.auth"] %>
   </div>
   
-  <% unless session["devise.facebook_data"] %>
-  
   <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
@@ -38,8 +36,6 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
-
-  <% end %>
   
   <div class="actions">
     <%= f.submit "Sign up" %>
