@@ -1,6 +1,9 @@
 <div class="container">
 <h2>Sign up </h2>
-
+<h5> Lazy to even type your email? </h5>
+<%= link_to "Sign Up Using Facebook Now!", user_omniauth_authorize_path(:facebook), class: "blue darken-3 white-text btn" %>
+  
+  <br/><br/>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
