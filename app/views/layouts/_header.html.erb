@@ -37,6 +37,7 @@
           </li>
           <li><%= link_to 'Edit profile', edit_user_registration_path %> </li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %> </li>
+          <li><strong><%=link_to current_user.email, user_path(id: current_user.id) %></strong></li>
         <% else %>
           <li><%= link_to "Sign up", new_user_registration_path %> </li>
           <li><%= link_to "Login", new_user_session_path %></li>
