@@ -15,60 +15,87 @@
 
 
 <div class="module-background white-text row grey darken-1">
-  <div class="center-align">
-    <h4>The Weather Today <%=Date.today%>  <%= image_tag "http://openweathermap.org/img/w/#{@weatherIcon2}.png" %> For:</h4>
-    <%= @city %>
-    <br/>
-    <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %>
-    <br/>
-    <h4>Season</h4>
-    <%= @season%>
-    <h4>Average temperature</h4>
-    <%= @displayString %>
-    <br/>
-    <h4>Minimal temperature</h4>
-    <%= @displayString2%>
-    <br/>
-    <h4>Maximum temperature</h4>
-    <%= @displayString3%>
-  </div>
+  <ul class="weather_today center-align">
+    <li>
+      <h4>The Weather Today <%=Date.today%>  <%= image_tag "http://openweathermap.org/img/w/#{@weatherIcon2}.png" %> For:</h4>
+      <%= @city %>
+      <br/>
+      <% image_tag "https://farm#{@farmId}.staticflickr.com/#{@serverId}/#{@id}_#{@secretId}_b.jpg" %>
+      <br/>
+    </li>
+    <li>
+      <h4>Season</h4>
+      <%= @season%>
+    </li>
+    <li>
+      <h4>Average temperature</h4>
+      <%= @displayString %>
+      <br/>
+    </li>
+    <li>
+      <h4>Minimal temperature</h4>
+      <%= @displayString2%>
+      <br/>
+    </li>
+    <li>
+      <h4>Maximum temperature</h4>
+      <%= @displayString3%>
+    </li>
+  </ul>
 </div>
 
 <div class="clearer"></div>
 
 </div>
 <% if @num_of_days.to_i > 1 %>
-<div class="row">
-  <div class="col s12 l12 grey lighten-3 text-center">
-    <h4>The Weather Forecast For Next <%=@num_of_days%> days (Average Temperature Only): </h4>
-    <% #@city + " " + @lat_long.to_s %>
-    <br/>
-
-    <div class="row">
-      <% @displayForecastArray.each_with_index do |w, index|%>
-      <div class="col s12 m6 l3">
-        <h5>Day: <%=Date.today+(index+1).days%></h5>
-        <%= image_tag "http://openweathermap.org/img/w/#{@displayForecastArray2[index]}.png" %>
-        <%= w.to_s+'°C' %>
+<ul class="weather_forecast">
+  <div class="row">
+    <div class="col s12 l12 grey lighten-3 text-center">
+      <li>
+        <h4>The Weather Forecast For Next <%=@num_of_days%> days (Average Temperature Only): </h4>
+      </li>
+      
+      <li>
+      <div class="row">
+        <% @displayForecastArray.each_with_index do |w, index|%>
+        <div class="col s12 m6 l3">
+          <h5>Day: <%=Date.today+(index+1).days%></h5>
+          <%= image_tag "http://openweathermap.org/img/w/#{@displayForecastArray2[index]}.png" %>
+          <%= w.to_s+'°C' %>
+        </div>
+        <% break if index == @num_of_days.to_i-2 #for logic number of days%>
+        <% end %>
       </div>
-      <% break if index == @num_of_days.to_i-2 #for logic number of days%>
-      <% end %>
-    </div>
+      </li>
 
+    </div>
   </div>
-</div>
+</ul>
 
 <% end %>
 
 <div class="row center-align">
   <h3> Items to bring for <%= @season%> weather</h3>
-  <ul>
+  <ul class="items_list">
     <% @itemList.to_a.each do |i|%>
     <li>
-      <h5>
-        <%= i %>
-      </h5>
+      <h5><%= i %></h5>
     </li>
     <% end %>
   </ul>
+  <% unless user_signed_in? %>
+  <div class="card-panel grey lighten-3 info_user">
+    <h2 class="blue-text text-darken-2"> Unhapppy with our generated list? Sign up now and create your own packing list! </h2>
+  </div>
+  <% end %>
 </div>
+
+<% content_for :script  do %>
+var options = [
+   {selector: '.weather_today', offset: 450, callback: 'Materialize.showStaggeredList(".weather_today")' },
+   {selector: '.weather_forecast', offset: 300, callback: 'Materialize.showStaggeredList(".weather_forecast")' },
+   {selector: '.items_list', offset: 300, callback: 'Materialize.showStaggeredList(".items_list")' },
+   {selector: '.info_user', offset: 200, callback: '$(".info_user").fadeIn(2000)' }
+ ];
+ Materialize.scrollFire(options);
+<% end %>

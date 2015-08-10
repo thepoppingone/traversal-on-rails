@@ -119,6 +119,14 @@ input::-webkit-inner-spin-button {
 Custom
 ====================================================================================================*/
 
+.weather_today li, .weather_forecast li, .items_list li{
+  opacity: 0;
+}
+
+.info_user{
+  display:none;
+}
+
 
 /*============================================
 User
