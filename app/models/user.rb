@@ -24,9 +24,12 @@ def self.new_with_session(params, session)
   super.tap do |user|
      if data = session["devise.facebook_data"] && session["devise.facebook_data"]["extra"]["raw_info"]
        user.email = data["email"] if user.email.blank?
-       user.password = "password"
      end
    end
  end
+ 
+ def valid_password?(password)  
+  !provider.nil? || super(password)  
+end
 
 end
