@@ -75,7 +75,8 @@
 <% end %>
 
 <div class="row center-align">
-  <h3> Items to bring for <%= @season%> weather</h3>
+  <h3> Items to bring for <%= @season%> weather ></h3>
+  <h1> </h1>
   <ul class="items_list">
     <% @itemList.to_a.each do |i|%>
     <li>
@@ -83,7 +84,9 @@
     </li>
     <% end %>
   </ul>
-  <% unless user_signed_in? %>
+  <% if user_signed_in? %>
+  <%= link_to "Add list to account", {:controller => "main_pages", :action => "add_to_user", :user_id => current_user.id, :list_id => @season_list.id } ,class: "btn" %>
+  <% else %>
   <div class="card-panel grey lighten-3 info_user">
     <h2 class="blue-text text-darken-2"> Unhapppy with our generated list? Sign up now and create your own packing list! </h2>
   </div>

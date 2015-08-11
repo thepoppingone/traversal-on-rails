@@ -4,6 +4,15 @@ class MainPagesController < ApplicationController
   require 'open_weather'
   @team_page = false
 
+  def add_to_user
+    list = List.find(params[:list_id])
+    @list = list.dup
+    @list.user_id = params[:user_id]
+    @list.save
+    flash[:notice] = 'The official list is now added to your account!'
+    redirect_to user_path(params[:user_id])
+  end
+
   def home
     @html_title = "Traversal - Home"
   end
@@ -69,6 +78,8 @@ class MainPagesController < ApplicationController
 
     @admin_user_id =  User.find_by( email: "admin@traversal.com").id
     @itemList = List.find_by('user_id = ? AND name LIKE ?', @admin_user_id, @season_wrapper).items.pluck(:name)
+    
+    @season_list = List.find_by('user_id = ? AND name LIKE ?', @admin_user_id, @season_wrapper)
 
     def find_image_by_city(city) #returns as a JSON
       #use HTTP to call random APIs using a query string

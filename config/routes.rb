@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'main_pages/home' => 'main_pages#home', :as => :traversal_home
   get 'main_pages/list_results' => 'main_pages#city_search', :as => :city_search
   post 'main_pages/list_results' => 'main_pages#list_results'
+  get 'main_pages/add_to_user' => "main_pages#add_to_user", :as => :add_to_user
   
   get 'main_pages/about_us' => 'main_pages#about_us', :as => :traversal_about_us
   get 'main_pages/contact_us' => 'main_pages#contact_us', :as => :traversal_contact_us
