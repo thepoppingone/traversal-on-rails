@@ -6,9 +6,15 @@ class MainPagesController < ApplicationController
 
   def add_to_user
     list = List.find(params[:list_id])
+    items = list.items
     @list = list.dup
     @list.user_id = params[:user_id]
     @list.save
+    items.each do |i|
+      item = i.dup
+      item.list_id = @list.id
+      item.save
+    end
     flash[:notice] = 'The official list is now added to your account!'
     redirect_to user_path(params[:user_id])
   end
