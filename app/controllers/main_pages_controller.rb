@@ -28,16 +28,18 @@ class MainPagesController < ApplicationController
 
     @city = params[:city]
     @num_of_days = params[:duration]
+    
+    @app_id = "6b9365e88f7e2a1af1e8fb11ab50304a"
 
     #@displayString = OpenWeather::Current.city(@city) Using openweather gem
 
-    def find_by_city(city) #returns as a JSON
+    def find_by_city(city, app_id) #returns as a JSON
       #use HTTP to call random APIs using a query string
-      HTTParty.get('http://api.openweathermap.org/data/2.5/weather', :query => {:q => city, :units => 'metric'})
+      HTTParty.get('http://api.openweathermap.org/data/2.5/weather', :query => {:q => city, :units => 'metric', :APPID => app_id})
     end
 
-    def find_by_city_forecast(city, days)
-      HTTParty.get('http://api.openweathermap.org/data/2.5/forecast', :query => {:q => city, :units => 'metric', :cnt => days})
+    def find_by_city_forecast(city, days, app_id)
+      HTTParty.get('http://api.openweathermap.org/data/2.5/forecast', :query => {:q => city, :units => 'metric', :cnt => days, :APPID => app_id})
     end
 
     def get_lat_long_by_city_name(city)
@@ -45,14 +47,14 @@ class MainPagesController < ApplicationController
     end
 
     #  puts find_by_city(@city).body #(shows up in the Rails server)
-    weather_info = JSON.parse(find_by_city(@city).body)
+    weather_info = JSON.parse(find_by_city(@city, @app_id).body)
     @displayString = weather_info["main"]["temp"].to_s + "°C"
     @displayString2 = weather_info["main"]["temp_min"].to_s + "°C"
     @displayString3 = weather_info["main"]["temp_max"].to_s + "°C"
     @weatherIcon = weather_info["weather"]
     @weatherIcon2 = @weatherIcon[0]["icon"]
 
-    weather_forecast = JSON.parse(find_by_city_forecast(@city, 14).body)
+    weather_forecast = JSON.parse(find_by_city_forecast(@city, 14, @app_id).body)
     #puts find_by_city_forecast(@city,14).body
     #@displayForecast =  weather_forcast
     @displayForecastHash = weather_forecast["list"] #+ "°C"
