@@ -28,7 +28,7 @@ class MainPagesController < ApplicationController
 
     @city = params[:city]
     @num_of_days = params[:duration]
-    
+
     @app_id = "6b9365e88f7e2a1af1e8fb11ab50304a"
 
     #@displayString = OpenWeather::Current.city(@city) Using openweather gem
@@ -86,7 +86,7 @@ class MainPagesController < ApplicationController
 
     @admin_user_id =  User.find_by( email: "admin@traversal.com").id
     @itemList = List.find_by('user_id = ? AND name LIKE ?', @admin_user_id, @season_wrapper).items.pluck(:name)
-    
+
     @season_list = List.find_by('user_id = ? AND name LIKE ?', @admin_user_id, @season_wrapper)
 
     def find_image_by_city(city) #returns as a JSON
@@ -132,9 +132,8 @@ class MainPagesController < ApplicationController
     @team_page = true
   end
 
-
-
-
-
+  def hackathon
+    @html_title = "Test Layout"
+  end
 
 end
