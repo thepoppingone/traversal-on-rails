@@ -23,3 +23,6 @@
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+* If there is anything wrong with missing roles or database refer to this
+http://stackoverflow.com/questions/8639424/role-does-not-exist-and-unable-to-create-database-when-using-postgresql
